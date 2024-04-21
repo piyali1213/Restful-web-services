@@ -36,7 +36,7 @@ public class UserDaoService {
 
     {
         Predicate<? super UserSocialMedia> predicate=UserSocialMedia->UserSocialMedia.getUserId().equals(userId);
-       // Predicate<? super UserSocialMedia> predicate=x->x.getUserId().equals(userId) ;
+      // Predicate<? super UserSocialMedia> predicate=x->x.getUserId().equals(userId) ;
        // return userSocialMediaList.stream().filter(predicate).findFirst().get();
 
         // for exception handling bellow line
@@ -49,6 +49,11 @@ public class UserDaoService {
         userSocialMediaList.add(user);
         return user;
 
+    }
+    public void deleteById(int userId)
+    {
+        Predicate<? super UserSocialMedia> predicate=UserSocialMedia->UserSocialMedia.getUserId().equals(userId);
+             userSocialMediaList.removeIf(predicate);
     }
 
 
